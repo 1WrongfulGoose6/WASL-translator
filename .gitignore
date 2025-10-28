@@ -4,6 +4,8 @@ venv/
 # Python cache files
 __pycache__/
 *.py[cod]
+*.pt
+*.h5
 
 # Environment variables / API keys
 .env
@@ -18,3 +20,6 @@ __pycache__/
 # OS-specific clutter
 .DS_Store
 Thumbs.db
+
+# Datasets
+data/raw/
