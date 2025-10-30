@@ -29,7 +29,7 @@ def load_images_from_folder(folder_path: str, label: str = None, limit: int = No
 # Loads all training data from subfolders
 def load_train_data(train_dir: str, debug: bool = False):
     X, y = [], []
-    limit = 20 if debug else None  # only load 20 per class when debugging
+    limit = 5 if debug else None  # only load 20 per class when debugging
     for label_folder in os.listdir(train_dir):
         folder_path = os.path.join(train_dir, label_folder)
         if os.path.isdir(folder_path):
@@ -43,7 +43,7 @@ def load_train_data(train_dir: str, debug: bool = False):
 
 # Loads all test data from a single folder
 def load_test_data(test_dir: str, debug: bool = False):
-    limit = 20 if debug else None
+    limit = 5 if debug else None
     X, y = load_images_from_folder(test_dir, limit=limit)
     print(f"Loaded {len(X)} test images across {len(set(y))} labels.")
     return X, y
